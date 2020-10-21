@@ -1,14 +1,14 @@
 package com.bsu.Main;
 
 import com.bsu.Classes.Company;
+import com.bsu.Classes.Menu;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         List<Company> companies = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
             String line;
@@ -29,6 +29,7 @@ public class Main {
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
+        new Menu(new Scanner(System.in)).start(companies);
     }
 
     public static void getAllCompanies(List<Company> companies) {
@@ -36,4 +37,6 @@ public class Main {
             System.out.println(x.toString());
         }
     }
+
+
 }

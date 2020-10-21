@@ -43,9 +43,6 @@ public class Company {
         return shortName;
     }
 
-    public String getShortNameToLowerCase() {
-        return shortName.toLowerCase();
-    }
     public String getDateOfActualization() {
         return dateOfActualization;
     }
@@ -87,10 +84,14 @@ public class Company {
         return typeOfWork;
     }
 
+    public int getEmployees() {
+        return Integer.parseInt(getNumberOfEmployees());
+    }
+
     @Override
     public String toString() {
         return name + "," + shortName + "," + dateOfActualization + "," + address +
-                "," + dateOfActualization + "," + numberOfEmployees + "," + auditor +
+                "," + dateOfFoundation + "," + numberOfEmployees + "," + auditor +
                 "," + phoneNumber + "," + eMail + "," + brunchOfWork + "," +
                 typeOfWork + "," +webPage + "\n";
     }
